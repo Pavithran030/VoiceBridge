@@ -1,0 +1,30 @@
+query,expected_faq_id
+how to apply for btech admission,FAQ-ADM-01
+when is the last date to apply for admission,FAQ-ADM-02
+can diploma students get lateral entry into second year,FAQ-ADM-03
+how can I pay my semester college fee online,FAQ-FEE-01
+is there any fine for paying fees after the due date,FAQ-FEE-02
+can I pay my fees in monthly installments,FAQ-FEE-03
+when will semester end exams start,FAQ-EXAM-01
+where can I download my exam hall ticket,FAQ-EXAM-02
+how to apply for exam paper revaluation,FAQ-EXAM-03
+where is the weekly class lecture timetable,FAQ-TIME-01
+what are the morning and evening college class hours,FAQ-TIME-02
+what engineering branches and degrees are offered,FAQ-DEPT-01
+is branch change allowed after first year cse,FAQ-DEPT-02
+what are the library opening and closing hours,FAQ-LIB-01
+how many books can I issue from the library,FAQ-LIB-02
+which companies visit for campus placement drives,FAQ-PLACE-01
+when do students register with placement cell,FAQ-PLACE-02
+how to apply for college hostel room,FAQ-HOST-01
+what is the evening hostel curfew time,FAQ-HOST-02
+how can I get a student bus pass for college bus,FAQ-TRANS-01
+where should students park two wheelers,FAQ-TRANS-02
+what merit scholarships are available for college students,FAQ-SCHOL-01
+where do I submit my scholarship income certificate,FAQ-SCHOL-02
+where is the administrative office and registrar,FAQ-CONT-01
+what is the contact number of the campus doctor health centre,FAQ-CONT-02
+how do I submit a complaint about hostel mess food,FAQ-COMP-01
+who is the anti ragging committee contact person,FAQ-COMP-02
+hello voicebridge can you help me,FAQ-GREET-01
+thanks for your help goodbye,FAQ-BYE-01

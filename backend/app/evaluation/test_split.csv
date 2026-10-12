@@ -1,0 +1,59 @@
+text,intent,cleaned_text
+what amenities are provided in the girls hostel rooms,hostel,what amenities are provided in the girls hostel rooms
+hello there,greeting,hello there
+does the library have previous year exam question papers,library,does the library have previous year exam question papers
+when does the admission portal open for next year,admission,when does the admission portal open for next year
+can you order a pizza for me right now,other,can you order a pizza for me right now
+where can I collect my degree certificate and transcripts,contact_office,where can i collect my degree certificate and transcripts
+who is the head of corporate relations and placement officer,placement,who is the head of corporate relations and placement officer
+where to check room allocations in the class timetable,timetable,where to check room allocations in the class timetable
+how do I escalate an unresolved complaint to higher authorities,complaint,how do i escalate an unresolved complaint to higher authorities
+farewell assistant,goodbye,farewell assistant
+goodbye VoiceBridge,goodbye,goodbye voicebridge
+does the college provide aptitude and soft skills training,placement,does the college provide aptitude and soft skills training
+where should I submit the scholarship renewal form,scholarship,where should i submit the scholarship renewal form
+who is the chief librarian and how to contact them,library,who is the chief librarian and how to contact them
+does the department offer honours or minor degree courses,department_course,does the department offer honours or minor degree courses
+what are the morning pickup timings for route number 12,transport,what are the morning pickup timings for route number 12
+does the college operate bus routes from the city center,transport,does the college operate bus routes from the city center
+can pre-final year students participate in internship drives,placement,can pre-final year students participate in internship drives
+how many days before exams are hall tickets distributed,exam_schedule,how many days before exams are hall tickets distributed
+is lateral entry admission available for diploma students,admission,is lateral entry admission available for diploma students
+what is the contact information for the campus health centre,contact_office,what is the contact information for the campus health centre
+what are the working hours of the campus finance counter,contact_office,what are the working hours of the campus finance counter
+what is the total fee for MCA program,fees,what is the total fee for mca program
+tell me a joke,other,tell me a joke
+has the class timetable changed for this week,timetable,has the class timetable changed for this week
+hey can I ask something,greeting,hey can i ask something
+where can I download the fee payment receipt,fees,where can i download the fee payment receipt
+is there any change in the final exam date sheet,exam_schedule,is there any change in the final exam date sheet
+where can I download the final exam timetable,exam_schedule,where can i download the final exam timetable
+what is the official email address of the registrar,contact_office,what is the official email address of the registrar
+how can I apply for a student campus bus pass,transport,how can i apply for a student campus bus pass
+when will the end semester exam hall tickets be released,exam_schedule,when will the end semester exam hall tickets be released
+how many credits are required to complete B.Tech,department_course,how many credits are required to complete b.tech
+what electives are offered in 6th semester IT,department_course,what electives are offered in 6th semester it
+how do I apply for college hostel accommodation,hostel,how do i apply for college hostel accommodation
+hi how are you,greeting,hi how are you
+how many lecture hours are scheduled per day,timetable,how many lecture hours are scheduled per day
+are summer internships arranged by the placement cell,placement,are summer internships arranged by the placement cell
+how to register for PG admissions 2026,admission,how to register for pg admissions 2026
+how can I recommend a new technical book to the library,library,how can i recommend a new technical book to the library
+how long does the grievance committee take to respond,complaint,how long does the grievance committee take to respond
+the bus driver was driving rashly on route 5,complaint,the bus driver was driving rashly on route 5
+is laundry facility available in the student hostel,hostel,is laundry facility available in the student hostel
+how can I renew my borrowed library books online,library,how can i renew my borrowed library books online
+how does a jet engine work,other,how does a jet engine work
+who teaches operating systems in 3rd semester,department_course,who teaches operating systems in 3rd semester
+who resolves student disputes and disciplinary issues,complaint,who resolves student disputes and disciplinary issues
+translate this sentence into Spanish,other,translate this sentence into spanish
+is there a sports scholarship for state level players,scholarship,is there a sports scholarship for state level players
+what are the classroom timings on Saturday,timetable,what are the classroom timings on saturday
+see you later,goodbye,see you later
+are tuition fee waivers provided for top semester rank holders,scholarship,are tuition fee waivers provided for top semester rank holders
+what is the last date for fee payment without fine,fees,what is the last date for fee payment without fine
+what is the fee structure for computer science engineering,fees,what is the fee structure for computer science engineering
+good evening,greeting,good evening
+where can I submit my admission application form,admission,where can i submit my admission application form
+what are the security measures inside the campus hostels,hostel,what are the security measures inside the campus hostels
+exit now,goodbye,exit now
