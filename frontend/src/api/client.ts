@@ -66,6 +66,11 @@ export const apiClient = {
     return handleResponse<SpeechAnalysisResponse>(res);
   },
 
+  async analyzeSampleAudio(): Promise<SpeechAnalysisResponse> {
+    const res = await fetch(`${API_BASE}/api/speech/sample-analysis`);
+    return handleResponse<SpeechAnalysisResponse>(res);
+  },
+
   async synthesizeSpeech(text: string): Promise<Blob> {
     const res = await fetch(`${API_BASE}/api/speech/synthesize`, {
       method: 'POST',

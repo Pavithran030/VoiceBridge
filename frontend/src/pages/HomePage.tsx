@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { QueryForm } from '../components/QueryForm';
-import { AudioUploader } from '../components/AudioUploader';
 import { TranscriptEditor } from '../components/TranscriptEditor';
 import { AnswerPanel } from '../components/AnswerPanel';
 import { ConfidenceDetails } from '../components/ConfidenceDetails';
@@ -22,7 +21,6 @@ export const HomePage: React.FC = () => {
     try {
       const res = await apiClient.queryText(text);
       setResult(res);
-      // Clear transcript editor if it was open
       setPendingTranscript(null);
     } catch (err: any) {
       setErrorMessage(err.message || 'Failed to process question.');
@@ -54,43 +52,29 @@ export const HomePage: React.FC = () => {
   };
 
   const handleSuggestionClick = (suggestionText: string) => {
-    // If the suggestion is a question, run it directly
     if (suggestionText.endsWith('?') || suggestionText.startsWith('How') || suggestionText.startsWith('When')) {
       handleTextSubmit(suggestionText);
     } else {
-      // Re-query with the suggested topic
       handleTextSubmit(`Tell me about ${suggestionText}`);
     }
   };
 
   return (
     <div>
-      <div style={{ marginBottom: '1.5rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-          Ask VoiceBridge Helpdesk
-        </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-          Ask questions regarding admissions, fees, exam timetables, departments, library, hostels, or transport.
-        </p>
+      <div className="page-header">
+        <h1>Campus Helpdesk Assistant</h1>
+        <p>Ask campus questions via typed text or speech. Responses are verified against indexed official campus FAQs.</p>
       </div>
 
       <ErrorMessage message={errorMessage || ''} onDismiss={() => setErrorMessage(null)} />
 
-      {/* Primary Input Section */}
-      <div className="card">
-        <QueryForm onSubmit={handleTextSubmit} isLoading={isQuerying} />
-        <div style={{ margin: '1.5rem 0', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--border-color)' }} />
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            OR USE VOICE
-          </span>
-          <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--border-color)' }} />
-        </div>
-        <AudioUploader
-          onAudioSelected={handleAudioSelected}
-          isTranscribing={isTranscribing}
-        />
-      </div>
+      {/* Unified Input Component */}
+      <QueryForm
+        onSubmit={handleTextSubmit}
+        onAudioSelected={handleAudioSelected}
+        isLoading={isQuerying}
+        isTranscribing={isTranscribing}
+      />
 
       {/* Editable Speech Transcript Section */}
       {pendingTranscript && (
@@ -103,9 +87,9 @@ export const HomePage: React.FC = () => {
         />
       )}
 
-      {/* NLP Answer and Explainability Results */}
+      {/* Answer and Explainability Results */}
       {result && (
-        <div style={{ marginTop: '2rem' }}>
+        <div style={{ marginTop: '1.5rem' }}>
           <AnswerPanel result={result} onSelectSuggestion={handleSuggestionClick} />
           <ConfidenceDetails result={result} />
         </div>

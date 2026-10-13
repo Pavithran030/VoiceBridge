@@ -4,13 +4,9 @@ import { BookOpen, Layers, Code2, AlertTriangle } from 'lucide-react';
 export const AboutPage: React.FC = () => {
   return (
     <div>
-      <div style={{ marginBottom: '1.5rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-          About VoiceBridge
-        </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-          Architectural documentation, syllabus concept mapping, and student guide for academic reviews.
-        </p>
+      <div className="page-header">
+        <h1>About VoiceBridge</h1>
+        <p>Architectural documentation, syllabus concept mapping, and student guide for academic reviews.</p>
       </div>
 
       {/* Project Overview */}

@@ -40,13 +40,9 @@ export const AnalyticsPage: React.FC = () => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
-        <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-            Helpdesk Usage Analytics
-          </h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            Aggregate query traffic, resolution performance, and sentiment indicators.
-          </p>
+        <div className="page-header" style={{ marginBottom: 0 }}>
+          <h1>Helpdesk Usage Analytics</h1>
+          <p>Aggregate query traffic, resolution performance, and sentiment indicators.</p>
         </div>
 
         <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -64,20 +60,7 @@ export const AnalyticsPage: React.FC = () => {
       <ErrorMessage message={errorMessage || ''} onDismiss={() => setErrorMessage(null)} />
 
       {/* Privacy Notice Banner */}
-      <div
-        style={{
-          backgroundColor: 'rgba(16, 185, 129, 0.08)',
-          border: '1px solid rgba(16, 185, 129, 0.25)',
-          borderRadius: '8px',
-          padding: '0.85rem 1.25rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          marginBottom: '1.5rem',
-          fontSize: '0.85rem',
-          color: '#6ee7b7',
-        }}
-      >
+      <div className="success-banner">
         <ShieldCheck size={20} />
         <div>
           <strong>Privacy Preserving Design:</strong> By system default, VoiceBridge logs only aggregate event metadata (timestamp, confidence score, and status). Student question text and audio recordings are never permanently stored.

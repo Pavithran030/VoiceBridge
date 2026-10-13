@@ -52,13 +52,10 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
       {/* Footer */}
       <footer className="app-footer">
         <div>
-          <strong>VoiceBridge: Speech-Enabled Campus Helpdesk</strong> • Academic Mini Project
+          <strong>VoiceBridge</strong> • Speech-Enabled Campus Helpdesk
         </div>
-        <div style={{ marginTop: '0.25rem', fontSize: '0.8rem' }}>
-          Dual-Confidence Retrieval • Local Whisper ASR • librosa Speech Lab • VADER Sentiment • SQLite Privacy Log
-        </div>
-        <div style={{ marginTop: '0.4rem', color: '#64748b', fontSize: '0.75rem' }}>
-          Notice: Institutional dates, fees, and contacts are synthetic demo placeholders. Consult verified administrative offices for real campus policies.
+        <div style={{ marginTop: '0.25rem', color: 'var(--text-subtle)', fontSize: '0.78rem' }}>
+          Offline Speech & NLP Architecture • Powered by Faster-Whisper, Scikit-Learn & Librosa
         </div>
       </footer>
     </div>

@@ -13,9 +13,9 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onDismiss }
     <div
       role="alert"
       style={{
-        backgroundColor: 'var(--error-bg)',
-        border: '1px solid var(--error-border)',
-        color: 'var(--error-text)',
+        backgroundColor: '#fef2f2',
+        border: '1px solid #fecaca',
+        color: '#991b1b',
         borderRadius: '8px',
         padding: '0.85rem 1rem',
         marginBottom: '1rem',

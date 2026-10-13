@@ -38,7 +38,7 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({ result, onSelectSugges
                 <CheckCircle size={20} />
                 <span>Verified Campus FAQ Answer</span>
               </div>
-              <span className="outcome-tag" style={{ backgroundColor: 'rgba(5, 150, 105, 0.4)' }}>
+              <span className="outcome-tag">
                 Answered
               </span>
             </div>
@@ -55,7 +55,7 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({ result, onSelectSugges
                 <HelpCircle size={20} />
                 <span>Clarification Needed</span>
               </div>
-              <span className="outcome-tag" style={{ backgroundColor: 'rgba(217, 119, 6, 0.4)' }}>
+              <span className="outcome-tag">
                 Ambiguous
               </span>
             </div>
@@ -76,7 +76,7 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({ result, onSelectSugges
                 <AlertTriangle size={20} />
                 <span>Information Not Available</span>
               </div>
-              <span className="outcome-tag" style={{ backgroundColor: 'rgba(220, 38, 38, 0.4)' }}>
+              <span className="outcome-tag">
                 No Match
               </span>
             </div>
@@ -123,7 +123,7 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({ result, onSelectSugges
           )}
 
           {ttsError && (
-            <div style={{ color: 'var(--warning-text)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+            <div style={{ color: '#92400e', fontSize: '0.8rem', marginTop: '0.5rem' }}>
               Note: {ttsError}
             </div>
           )}

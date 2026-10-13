@@ -33,8 +33,8 @@ export const TranscriptEditor: React.FC<TranscriptEditorProps> = ({
     <div
       className="card"
       style={{
-        border: '1px solid var(--primary-accent)',
-        backgroundColor: 'rgba(59, 130, 246, 0.05)',
+        border: '1.5px solid #2563eb',
+        backgroundColor: '#eff6ff',
       }}
     >
       <div className="card-title">

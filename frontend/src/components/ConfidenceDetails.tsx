@@ -10,11 +10,11 @@ export const ConfidenceDetails: React.FC<ConfidenceDetailsProps> = ({ result }) 
   const getSentimentIcon = (label: string) => {
     switch (label) {
       case 'positive':
-        return <Smile size={16} color="#34d399" />;
+        return <Smile size={16} color="#16a34a" />;
       case 'negative':
-        return <Frown size={16} color="#f87171" />;
+        return <Frown size={16} color="#dc2626" />;
       default:
-        return <Meh size={16} color="#94a3b8" />;
+        return <Meh size={16} color="#64748b" />;
     }
   };
 

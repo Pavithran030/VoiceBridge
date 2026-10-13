@@ -190,6 +190,30 @@ Data integrity is verified before training using `validate_data.py`, ensuring ab
 - **Model Training:** Stratified train/test split (75% train / 25% test, `random_state=42`) executed in `train_intent_model.py`. Model pipeline persisted to `intent_model.joblib`.
 - **Speech Processing:** `faster-whisper` lazily loaded with CPU int8 quantization to prevent unnecessary memory footprint during text-only requests.
 
+### 13.1 Visual Implementation & Interface Screenshots
+The implemented system features a full-stack, responsive web application:
+
+![Figure 1: VoiceBridge Initial Interface](docs/screenshots/01_home_initial.png)
+*Figure 1: Initial interface featuring query input, audio recording, quick inquiry chips, and backend health status.*
+
+![Figure 2: Query Answer & Explainability](docs/screenshots/02_query_answered.png)
+*Figure 2: Query answered outcome with confidence metrics, FAQ similarity, entities, and sentiment analysis.*
+
+![Figure 3: Safe No-Answer Fallback](docs/screenshots/03_safe_no_answer_fallback.png)
+*Figure 3: Dual-threshold safe fallback preventing hallucination on out-of-scope queries.*
+
+![Figure 4: Speech Lab Signal Analysis](docs/screenshots/04_speech_lab_analysis.png)
+*Figure 4: Speech Lab displaying acoustic features: Waveform, STE, ZCR, Spectrogram, and MFCCs.*
+
+![Figure 5: Analytics Dashboard](docs/screenshots/05_analytics_dashboard.png)
+*Figure 5: Analytics dashboard with intent distribution, resolution rates, and privacy-preserving audit logs.*
+
+![Figure 6: Model Evaluation & Confusion Matrix](docs/screenshots/06_model_evaluation.png)
+*Figure 6: Model evaluation report showing held-out metrics, class breakdown, and 15-class confusion matrix.*
+
+![Figure 7: About & Syllabus Mapping](docs/screenshots/07_about_and_syllabus.png)
+*Figure 7: Syllabus mapping table and viva preparation documentation.*
+
 ---
 
 ## 14. Testing and Evaluation Methodology

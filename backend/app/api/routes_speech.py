@@ -53,6 +53,24 @@ async def analyze_speech(audio_file: UploadFile = File(...)):
             detail="Failed to extract audio features from the uploaded file."
         )
 
+@router.get("/sample-analysis", response_model=SpeechAnalysisResponse)
+def analyze_sample_audio():
+    sample_path = Path(__file__).resolve().parent.parent.parent / "sample_audio.wav"
+    if not sample_path.exists():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Sample audio file 'sample_audio.wav' not found on server."
+        )
+    content = sample_path.read_bytes()
+    try:
+        response = extract_audio_features(content)
+        return response
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to extract audio features from sample file."
+        )
+
 @router.post("/synthesize")
 def synthesize_speech(payload: SynthesizeRequest):
     text = payload.text.strip()

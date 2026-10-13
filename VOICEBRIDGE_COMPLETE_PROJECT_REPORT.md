@@ -572,45 +572,79 @@ transport            0   0   0   0   0   0   0   0   0   1   0   0   0   2   1
 
 ## 12. DEMONSTRATION GUIDE & USER WORKFLOWS
 
-Follow this 5-step walkthrough to demonstrate the system during a project review:
+Below is the visual walkthrough and user workflow demonstrating all core features of the VoiceBridge system:
 
-### Step 1: Submit a Clear Typed Query
-1. Open the **Ask VoiceBridge** tab.
-2. Enter: *"How do I pay my semester tuition fees online?"*
-3. Click **Ask VoiceBridge**.
-4. **Observed Output:**
-   - Status: **Answered** (Green banner).
-   - Answer: Displays verified payment portal instructions.
-   - NLP Explainability: Predicted Intent = `fees` (17.7% confidence), FAQ Match = `FAQ-FEE-01` (65.1% relevance), Sentiment = Neutral.
-   - Optional: Click **"Speak Answer Aloud"** to hear the response synthesized via `pyttsx3`.
+### 12.1 Initial Interface & Query Entry
+Upon launching VoiceBridge, the user is greeted by a clean, responsive interface displaying the backend connectivity status (`Backend Online (Port 8000)`), the query textarea with an active character counter, and dual input options (text input and microphone/audio upload).
 
-### Step 2: Submit an Unrelated / Out-of-Scope Query
-1. Enter: *"What is the capital of France?"*
-2. Click **Ask VoiceBridge**.
-3. **Observed Output:**
-   - Status: **Information Not Available** (Red banner).
-   - Explanation: Top FAQ similarity (29.8%) fell below the configured relevance threshold (30.0%). The system withholds answers to prevent hallucination.
-   - Suggestions: Displays suggested campus inquiries.
+![Figure 1: VoiceBridge Initial Interface](docs/screenshots/01_home_initial.png)
+*Figure 1: VoiceBridge main landing interface displaying the dual-modality query input form, microphone recording button, and backend connectivity indicator.*
 
-### Step 3: Record Voice and Verify the Transcript
-1. Click **Start Voice Recording**, speak a question into the microphone, then click **Stop Recording** (or select a sample WAV audio file).
-2. The system sends audio to `/api/speech/transcribe` and displays the raw text in the **Review & Edit Speech Transcript** box.
-3. Edit any misrecognized words in the textarea.
-4. Click **Submit Verified Question**. The corrected text is processed through the standard NLP pipeline.
+---
 
-### Step 4: Explore the Speech Lab
-1. Navigate to the **Speech Lab** tab.
-2. Click **Upload Audio to Analyze** and upload a speech file.
-3. **Observed Output:**
-   - Waveform chart showing sound pressure variations over time.
-   - Short-Time Energy chart highlighting voiced vs. unvoiced segments.
-   - Zero-Crossing Rate chart showing high crossing rates during fricatives and noise.
-   - STFT Log Spectrogram heatmap showing frequency distributions over time.
-   - 13-coefficient MFCC heatmap visualizing the spectral envelope.
+### 12.2 Query Answering & NLP Explainability Panel
+When a user asks a valid campus question such as *"How do I pay semester tuition fees online?"*, the NLP pipeline normalizes the text, classifies the intent as `fees`, extracts domain entities, and retrieves FAQ `FAQ-FEE-01` via cosine similarity.
 
-### Step 5: Inspect Analytics and Model Evaluation
-1. Navigate to the **Analytics** tab to view total query counts, resolution rates, intent distribution bars, and the privacy audit log.
-2. Navigate to the **Model Evaluation** tab to inspect the holdout accuracy (53.45%), classification report, and confusion matrix.
+![Figure 2: Verified Answer & Explainability](docs/screenshots/02_query_answered.png)
+*Figure 2: Output panel showing verified campus FAQ answer, local TTS speech synthesis button, intent confidence percentage bar, FAQ relevance score bar, VADER sentiment, and detected campus entities.*
+
+---
+
+### 12.3 Safe No-Answer Fallback for Out-of-Scope Questions
+To prevent hallucination, if an unrelated or out-of-scope inquiry is submitted (e.g., *"What is the distance between the Earth and Mars?"*), the top FAQ cosine similarity falls below the relevance threshold ($30.0\%$). The system withholds answers and returns targeted follow-up suggestions.
+
+![Figure 3: Safe No-Answer Fallback](docs/screenshots/03_safe_no_answer_fallback.png)
+*Figure 3: Rejection banner when cosine similarity falls below threshold, safely withholding unverified responses and providing official administrative contact guidance.*
+
+---
+
+### 12.4 Speech Lab Acoustic Signal Feature Analysis
+In the **Speech Lab** tab, students can upload any speech audio file to inspect its mathematical acoustic features. The system computes and visualizes:
+1. Signal metadata: Duration (1.50 s), Sampling Frequency (16,000 Hz), STFT Frame/Hop (512 / 256), Mel Coefficients (13);
+2. Time-domain Waveform $x(t)$;
+3. Short-Time Energy (STE) time-series curve;
+4. Zero-Crossing Rate (ZCR) time-series curve;
+5. Short-Time Fourier Transform (STFT) Log Spectrogram heatmap using the *magma* colormap;
+6. Mel-Frequency Cepstral Coefficients (MFCCs) heatmap using the *viridis* colormap.
+
+![Figure 4: Speech Lab Acoustic Feature Analysis](docs/screenshots/04_speech_lab_analysis.png)
+*Figure 4: Speech Lab educational signal processing suite displaying real-time Waveform, Short-Time Energy, Zero-Crossing Rate, STFT log spectrogram, and MFCC coefficient heatmaps.*
+
+---
+
+### 12.5 Helpdesk Usage Analytics & Privacy Audit Log
+The **Analytics** tab visualizes aggregate helpdesk traffic without compromising student privacy:
+- Summary KPI metric cards: Total queries, resolution rate, clarification count, and fallback count;
+- Intent frequency distribution bar charts across all 15 campus categories;
+- VADER sentiment polarity breakdown (positive, neutral, negative);
+- Privacy-preserving recent events audit log displaying timestamps, input modes, numerical confidence scores, and status flags (strictly no raw voice or query text).
+
+![Figure 5: Analytics Dashboard & Privacy Audit Log](docs/screenshots/05_analytics_dashboard.png)
+*Figure 5: Analytics dashboard showing campus inquiry distributions, resolution rate KPIs, and the privacy-preserving SQLite event audit log.*
+
+---
+
+### 12.6 Empirical Model Evaluation & Confusion Matrix
+The **Model Evaluation** tab presents genuine held-out evaluation artifacts generated by `evaluate_models.py`:
+- Overall metrics: Accuracy ($53.45\%$), Macro Precision ($59.78\%$), Macro Recall ($53.33\%$), and Macro F1 ($52.84\%$);
+- FAQ Retrieval Top-1 accuracy ($79.31\%$ across 29 test cases);
+- Stratified dataset split metadata (174 training samples, 58 held-out test samples, random seed 42);
+- Per-class classification report table with precision, recall, and support;
+- Complete $15 \times 15$ holdout confusion matrix grid with intensity highlighting.
+
+![Figure 6: Model Evaluation Report & Confusion Matrix](docs/screenshots/06_model_evaluation.png)
+*Figure 6: Model Evaluation tab presenting empirical holdout accuracy, per-class classification report, and the complete 15-class confusion matrix grid.*
+
+---
+
+### 12.7 About Section & Syllabus Mapping
+The **About & Help** tab documents the theoretical foundation of the project:
+- 10-point course mapping table linking project components to NLP and Speech Processing syllabus concepts;
+- Step-by-step instructions for adding custom university FAQs and retraining models;
+- Viva defense talking points detailing model limitations and boundary conditions.
+
+![Figure 7: About Section & Syllabus Mapping](docs/screenshots/07_about_and_syllabus.png)
+*Figure 7: About & Help tab with syllabus concept mapping table, FAQ customization guide, and academic review preparation notes.*
 
 ---
 
